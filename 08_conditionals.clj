@@ -29,18 +29,18 @@
 
   "You may have a multitude of possible paths"
   (let [x 5]
-    (= :your-road (cond (= x 3) :road-not-taken
-                        (= x 4) :another-road-not-taken
+    (= :your-road (cond (= x 4) :road-not-taken
+                        (= x 6) :another-road-not-taken
                         :else :your-road)))
 
   "Or your fate may be sealed"
-  (= 'more-doom (if-not (zero? 0)
+  (= 'doom (if-not (zero? 1)
           'doom
           'more-doom))
 
   "In case of emergency, go fast"
-  (= "is that even exercise?"
-     (explain-exercise-velocity :run))
+  (= "pretty fast"
+     (explain-exercise-velocity :bicycling))
 
   "But admit it when you don't know what to do"
   (= "is that even exercise?"

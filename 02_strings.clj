@@ -22,7 +22,7 @@
   (= false (= \c "c"))
 
   "What if you only wanted to get part of a string?"
-  (= "World" (subs "Hello World" 6))
+  (= "World" (subs "Hello World" 6 11))
 
   "How about joining together elements in a list?"
   (= "123" (string/join '(1 2 3)))

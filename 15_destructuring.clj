@@ -15,7 +15,7 @@
   (= (str "An Oxford comma list of apples, "
           "oranges, "
           "and pears.")
-     ((fn [[a b c]] (str "An Oxford comma list of " a ", " b ", and "c "."))
+     ((fn [[a b c]] (str "An Oxford comma list of " a ", " b ", and " c "."))
       ["apples" "oranges" "pears"]))
 
   "Or in let expressions"
@@ -27,7 +27,7 @@
   "You can regain the full argument if you like arguing"
   (= {:original-parts ["Stephen" "Hawking"] :named-parts {:first "Stephen" :last "Hawking"}}
      (let [[first-name last-name :as full-name] ["Stephen" "Hawking"]]
-       {:original-parts [first-name last-name] :named-parts {:first first-name :last last-name}}))
+       {:original-parts full-name :named-parts {:first first-name :last last-name}}))
 
   "Break up maps by keys"
   (= "123 Test Lane, Testerville, TX"
@@ -41,6 +41,6 @@
 
   "All together now!"
   (= "Test Testerson, 123 Test Lane, Testerville, TX"
-     ((fn [[p1 p2] {:keys [street-address city state]}]
-      (apply str (interpose ", " (list (str p1 " " p2) street-address city state))))
+     ((fn [[first-name last-name] {:keys [street-address city state]}]
+      (str first-name " " last-name ", " street-address ", " city ", " state))
       ["Test" "Testerson"] test-address)))
