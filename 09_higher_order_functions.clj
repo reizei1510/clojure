@@ -18,10 +18,10 @@
   (= '(:anything :goes :here) (filter (fn [x] true) '(:anything :goes :here)))
 
   "Or somewhere in between"
-  (= [10 20 30] (filter (fn [x] (< x 35)) [10 20 30 40 50 60 70 80]))
+  (= [10 20 30] (filter (fn [x] (< x 31)) [10 20 30 40 50 60 70 80]))
 
   "Maps and filters may be combined"
-  (= [10 20 30] (map (fn [y] (* y 10)) (filter (fn [x] (< x 4)) [1 2 3 4 5 6 7 8])))
+  (= [10 20 30] (map (fn [x] (* 10 x)) (filter (fn [x] (< x 4)) [1 2 3 4 5 6 7 8])))
 
   "Reducing can increase the result"
   (= 24 (reduce (fn [a b] (* a b)) [1 2 3 4]))
